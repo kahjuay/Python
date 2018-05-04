@@ -172,7 +172,7 @@ print("Area: " + str(A))
 r = 192500
 
 # Import radians function of math package instead of all functionality
-from math import radians
+from math import radians as radians
 
 # Travel distance of Moon over 12 degrees. Store in dist.
 dist = r * radians(12)
