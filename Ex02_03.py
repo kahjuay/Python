@@ -1,0 +1,5 @@
+print ("PY4E Exercise 02-03")
+xh = input("Enter Hours: ")
+xr = input("Enter Rates: ")
+xp = int(xh) * float(xr)
+print ("The Pay:", xp)
