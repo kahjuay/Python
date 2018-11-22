@@ -12,8 +12,14 @@ for line in filehand:
     line = line.rstrip()
     # print(line)
     lst = re.findall('[0-9]+',line)
-    # if len(lst)<1: 
-    #     continue
-    print(lst,len(lst))
+    # print (type(lst))
+    if len(lst)>0: 
+        # print(lst,len(lst))
+        for i in lst:
+            numlist.append(int(i))
+
+print(numlist)
+print(len(numlist))    
+print(sum(numlist))
     
     
