@@ -23,3 +23,30 @@ for email,count in di.items():
 
 # print(di)
 print (bigemail,bigcount)
+
+
+# New attempt
+name = input("Enter file:")
+if len(name) < 1 : name = "D:\OneDrive\Documents\Python\py4e\mbox-short.txt"
+try:
+    handle = open(name)
+except:
+    print(name,"is an invalid file, please try again!")
+    quit()
+
+count = dict()
+bigname = ""
+bigcount = 0
+
+for line in handle:
+    line = line.rstrip()
+    if line.startswith("From "):
+        line = line.split()
+        email = line[1]
+        #print(email)
+        count[email] = count.get(email,0)+1
+        if count[email] > bigcount:
+            bigcount = count[email]
+            bigname = email
+
+print(bigname,bigcount)

@@ -16,7 +16,15 @@ $        Matches the end of the line
 [a-z0-9] The set of characters can include a range
 (        Indicates where string extraction is to start
 )        Indicates where string extraction is to end
-
+\        Escape character
 
 
 https://www.py4e.com/lectures3/Pythonlearn-11-Regex-Handout.txt
+
+-- Import the library
+import re
+
+-- Functions
+re.search() to see if string matches regular expression
+
+re.findall() to extract portions of a string that match your regular expression

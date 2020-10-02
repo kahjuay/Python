@@ -1,27 +1,18 @@
 # Use the file name mbox-short.txt as the file name
-#import sys
-
 fname = input("Enter file name: ")
+
 try:
     fh = open(fname)
 except:
-    print ("Cannot open " + fname)
+    print(fname, "is an invalid file, please try again")
     quit()
 
-numtotal = 0
-numtotal = float(numtotal)
-linecount = 0
-for line in fh:
-    if not line.startswith("X-DSPAM-Confidence:") : 
-        continue
+intinstance = 0
+flttotal = 0
 
-    line = line.rstrip()
-    colpos = line.find(":")
-    numfound = line[colpos+1:]
-    numfound = float(numfound)
-    numtotal = numtotal + numfound
-    linecount = linecount + 1
+for line in fh:
+    if not line.startswith("X-DSPAM-Confidence:") : continue
     #print(line)
-    #print(numtotal/linecount)
-#print("Done")
-print ("Average spam confidence: " + str(numtotal/linecount))
+    intinstance += 1
+    flttotal += float(line[line.find(":")+1:].rstrip())
+print("Average spam confidence:",flttotal/intinstance)
